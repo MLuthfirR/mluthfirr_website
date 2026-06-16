@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="{{ asset('img/logo-mark-64.png') }}">
-    <link rel="stylesheet" href="{{ asset('css/cv.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/cv.css') }}?v={{ @filemtime(public_path('css/cv.css')) ?: '1' }}">
 </head>
 <body>
 
@@ -281,6 +281,6 @@
     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </a>
 
-<script src="{{ asset('js/cv.js') }}"></script>
+<script src="{{ asset('js/cv.js') }}?v={{ @filemtime(public_path('js/cv.js')) ?: '1' }}"></script>
 </body>
 </html>
