@@ -6,7 +6,6 @@ export DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=a
 HERE="$(cd "$(dirname "$0")/.." && pwd)"          # repo root
 CV=/var/www/mluthfirr_website
 CS=/var/www/logilink_cs
-HOME_IP="180.252.92.212"
 say() { echo ">>> $*"; }
 
 echo "================ 1) CV + PORTFOLIO PREVIEW ================"
@@ -69,12 +68,12 @@ backend = systemd
 maxretry = 4
 findtime = 10m
 bantime = 1h
-ignoreip = 127.0.0.1/8 ::1 ${HOME_IP}
+ignoreip = 127.0.0.1/8 ::1
 F2B
 systemctl enable fail2ban >/dev/null 2>&1; systemctl restart fail2ban
 printf 'APT::Periodic::Update-Package-Lists "1";\nAPT::Periodic::Unattended-Upgrade "1";\n' > /etc/apt/apt.conf.d/20auto-upgrades
 systemctl enable --now unattended-upgrades >/dev/null 2>&1
-say "fail2ban=$(systemctl is-active fail2ban)  (your IP ${HOME_IP} whitelisted)  unattended=$(systemctl is-enabled unattended-upgrades 2>/dev/null)"
+say "fail2ban=$(systemctl is-active fail2ban)  unattended=$(systemctl is-enabled unattended-upgrades 2>/dev/null)"
 
 echo "================ 6) Rotate WhatsApp gateway token ================"
 if [ -f "$CS/.env" ] && grep -q 'change-me' "$CS/.env"; then
