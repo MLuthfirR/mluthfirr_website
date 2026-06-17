@@ -225,7 +225,7 @@
     <img class="foot__logo" src="{{ asset('img/logo-full.png') }}" alt="{{ $p['name'] }}">
     <div class="foot__bar">
         <span>© {{ date('Y') }} {{ $p['name'] }}</span>
-        <a href="{{ url('/') }}" data-cursor="link">← Classic version</a>
+        <a href="#top" data-cursor="link">Back to top ↑</a>
     </div>
 </footer>
 
