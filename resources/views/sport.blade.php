@@ -98,7 +98,7 @@
             <div class="ab__photo" id="abPhoto">
                 <img class="ab__face" src="{{ asset('img/photo.jpg') }}" alt="{{ $p['name'] }}" loading="lazy">
                 <div class="ab__robot" aria-hidden="true">
-                    <svg class="ab__skull" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="ab__skull" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <linearGradient id="chr" x1="0" y1="0" x2="0" y2="1">
                                 <stop offset="0" stop-color="#f4f7fa"/><stop offset=".42" stop-color="#c4cdd7"/>
@@ -142,7 +142,6 @@
                         <circle cx="138" cy="330" r="3" fill="#6b7480"/>
                         <circle cx="262" cy="330" r="3" fill="#6b7480"/>
                     </svg>
-                    <span class="ab__scan"></span>
                 </div>
                 <span class="ab__ring" aria-hidden="true"></span>
                 <span class="ab__hint" aria-hidden="true">◉ Robot mode — hover to reveal</span>

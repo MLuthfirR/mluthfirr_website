@@ -112,19 +112,13 @@ section{position:relative}
 .ab__face,.ab__robot{position:absolute;inset:0}
 .ab__face{z-index:1}
 .ab__face{width:100%;height:100%;object-fit:cover;object-position:center 20%}
-.ab__robot{z-index:2;isolation:isolate;background:radial-gradient(125% 100% at 50% 30%,#1b1f25,#0a0b0d);
+.ab__robot{z-index:2;isolation:isolate;background:transparent;pointer-events:none;
     -webkit-mask-image:radial-gradient(circle var(--r) at var(--mx) var(--my),transparent 0,transparent 70%,#000 100%);
             mask-image:radial-gradient(circle var(--r) at var(--mx) var(--my),transparent 0,transparent 70%,#000 100%)}
-.ab__robot>*{position:absolute;inset:0;pointer-events:none}
-.ab__skull{width:100%;height:100%;filter:drop-shadow(0 12px 26px rgba(0,0,0,.55))}
+/* original chrome robot skull, placed proportionally over the head (tweakable via --skull-* vars) */
+.ab__skull{position:absolute;left:var(--skull-x,50%);top:var(--skull-y,15%);width:var(--skull-w,70%);aspect-ratio:400/500;height:auto;transform:translateX(-50%);filter:drop-shadow(0 12px 26px rgba(0,0,0,.55))}
 .ab__skull .eye{animation:eyePulse 2.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
 @keyframes eyePulse{0%,100%{opacity:.78}50%{opacity:1}}
-/* sweeping scan line */
-.ab__scan{overflow:hidden}
-.ab__scan::before{content:'';position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,rgba(255,64,30,.85),transparent);box-shadow:0 0 14px rgba(255,64,30,.75);animation:scanSweep 3.4s linear infinite}
-@keyframes scanSweep{0%{top:-4%}100%{top:104%}}
-/* focus vignette */
-.ab__robot::after{content:'';position:absolute;inset:0;z-index:5;pointer-events:none;background:radial-gradient(130% 100% at 50% 36%,transparent 46%,rgba(0,0,0,.6))}
 .ab__ring{position:absolute;z-index:3;left:var(--mx);top:var(--my);width:calc(var(--r) * 1.7);height:calc(var(--r) * 1.7);transform:translate(-50%,-50%);border-radius:50%;border:1.5px solid var(--acc);box-shadow:0 0 26px rgba(200,255,50,.45),inset 0 0 16px rgba(200,255,50,.22);opacity:0;pointer-events:none;transition:opacity .3s}
 .ab__hint{position:absolute;z-index:4;left:50%;bottom:1rem;transform:translateX(-50%);white-space:nowrap;font-family:var(--head);font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);background:rgba(12,13,10,.6);backdrop-filter:blur(4px);padding:.35rem .7rem;border-radius:2px;pointer-events:none;transition:opacity .3s}
 .ab__photo.is-revealing{--r:165px}
