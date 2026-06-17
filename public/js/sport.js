@@ -145,9 +145,9 @@
     /* ---- Loader → reveal ---- */
     var lc = document.getElementById('loaderCount'), lb = document.getElementById('loaderBar'), o = { v: 0 };
     gsap.timeline()
-        .to(o, { v: 100, duration: 1.2, ease: 'power2.inOut', onUpdate: function () { if (lc) lc.textContent = Math.round(o.v); } }, 0)
-        .to(lb, { width: '100%', duration: 1.2, ease: 'power2.inOut' }, 0)
-        .to(loader, { yPercent: -100, duration: 0.9, ease: 'power4.inOut', onComplete: function () { if (loader) loader.style.display = 'none'; ScrollTrigger.refresh(); } }, 1.3);
+        .to(o, { v: 100, duration: 2.4, ease: 'power2.inOut', onUpdate: function () { if (lc) lc.textContent = Math.round(o.v); } }, 0)
+        .to(lb, { width: '100%', duration: 2.4, ease: 'power2.inOut' }, 0)
+        .to(loader, { yPercent: -100, duration: 0.9, ease: 'power4.inOut', onComplete: function () { if (loader) loader.style.display = 'none'; ScrollTrigger.refresh(); } }, 2.5);
 
     addEventListener('load', function () { ScrollTrigger.refresh(); });
 

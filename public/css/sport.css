@@ -239,11 +239,11 @@ section{position:relative}
 @keyframes lnIn{from{transform:translateY(110%)}to{transform:translateY(0)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 @keyframes zoomOut{from{transform:scale(1.16)}to{transform:scale(1)}}
-html.is-animating .hero__name .ln__in{transform:translateY(110%);animation:lnIn .9s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(1.4s + var(--i,0)*.1s)}
+html.is-animating .hero__name .ln__in{transform:translateY(110%);animation:lnIn .9s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(2.5s + var(--i,0)*.1s)}
 html.is-animating .hero__kicker,
-html.is-animating .hero__foot{opacity:0;animation:fadeUp .85s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:2s}
-html.is-animating .hero__media{opacity:0;animation:fadeUp .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:1.5s}
-html.is-animating .hero__photo img{animation:zoomOut 1.5s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:1.5s}
+html.is-animating .hero__foot{opacity:0;animation:fadeUp .85s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:3.1s}
+html.is-animating .hero__media{opacity:0;animation:fadeUp .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:2.6s}
+html.is-animating .hero__photo img{animation:zoomOut 1.5s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:2.6s}
 
 html.is-animating .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
 html.is-animating .reveal.in{opacity:1;transform:none}
