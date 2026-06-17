@@ -49,7 +49,6 @@
         <a href="#contact" data-cur="link">Contact</a>
     </nav>
     <div class="nav__right">
-        <a href="{{ url('/') }}" class="nav__alt" data-cur="link">Main site ↗</a>
         <a href="#contact" class="btn btn--acc" data-cur="link"><span>Get in touch</span></a>
     </div>
 </header>
