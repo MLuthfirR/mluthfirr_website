@@ -16,6 +16,7 @@
     <aside class="side">
         <div class="side__brand"><img src="{{ asset('img/logo-mark.png') }}" alt=""> Admin</div>
         <a href="{{ route('admin.dashboard') }}" class="nav {{ ($activeKey ?? '') === 'dashboard' ? 'active' : '' }}">🏠 Dashboard</a>
+        <a href="{{ route('admin.analytics') }}" class="nav {{ ($activeKey ?? '') === 'analytics' ? 'active' : '' }}">📈 Analytics</a>
         <div class="side__sep"></div>
         @foreach (config('content_schema') as $k => $s)
             <a href="{{ route('admin.section.edit', $k) }}" class="nav {{ ($activeKey ?? '') === $k ? 'active' : '' }}">{{ $s['icon'] }} {{ $s['label'] }}</a>

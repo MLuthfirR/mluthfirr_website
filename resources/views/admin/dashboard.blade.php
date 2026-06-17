@@ -7,6 +7,11 @@
     <p style="color:var(--mut);margin-top:-1rem;margin-bottom:1.6rem">Pick a section to edit. Changes go live on your site immediately.</p>
 
     <div class="cards">
+        <a class="card" href="{{ route('admin.analytics') }}" style="border-color:var(--acc)">
+            <div class="card__ic">📈</div>
+            <div class="card__t">Analytics</div>
+            <div class="card__c">Visitors &amp; traffic report</div>
+        </a>
         @foreach ($schema as $key => $s)
             @php
                 $val = $content[$key] ?? null;
