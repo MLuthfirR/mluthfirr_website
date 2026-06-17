@@ -186,7 +186,7 @@ section{position:relative}
 .ex__tag:hover{background:var(--acc);color:var(--ink-on-acc);border-color:var(--acc)}
 
 /* ---------- education ---------- */
-.ed{padding:clamp(2rem,4vw,3rem) var(--pad) clamp(4rem,8vw,6rem);max-width:var(--maxw);margin:0 auto}
+.ed{padding:clamp(2rem,4vw,3rem) var(--pad);max-width:var(--maxw);margin:0 auto}
 .ed__grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem}
 .ed__card{position:relative;overflow:hidden;padding:2.2rem;border:1px solid var(--line2);border-radius:3px;background:var(--bg2);transition:border-color .35s,transform .35s}
 .ed__card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--acc)}
@@ -195,6 +195,17 @@ section{position:relative}
 .ed__deg{font-family:var(--disp);font-weight:400;font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.02;text-transform:uppercase;margin-top:.6rem}
 .ed__sch{color:var(--mut);margin-top:.4rem}
 @media(max-width:680px){.ed__grid{grid-template-columns:1fr}}
+
+/* ---------- certifications ---------- */
+.ce{padding:clamp(2rem,4vw,3rem) var(--pad) clamp(4rem,8vw,6rem);max-width:var(--maxw);margin:0 auto}
+.ce__grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem}
+.ce__card{position:relative;overflow:hidden;padding:2rem 2.2rem;border:1px solid var(--line2);border-radius:3px;background:var(--bg2);transition:border-color .35s,transform .35s}
+.ce__card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--acc)}
+.ce__card:hover{border-color:var(--acc);transform:translateY(-4px)}
+.ce__badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--head);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-on-acc);background:var(--acc);padding:.32rem .7rem;border-radius:2px}
+.ce__name{font-family:var(--disp);font-weight:400;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.02;text-transform:uppercase;margin-top:1rem}
+.ce__iss{color:var(--mut);margin-top:.4rem}
+@media(max-width:680px){.ce__grid{grid-template-columns:1fr}}
 
 /* ---------- contact ---------- */
 .ct{position:relative;overflow:hidden;padding:clamp(4rem,9vw,7rem) var(--pad);max-width:var(--maxw);margin:0 auto;text-align:center;border-top:2px solid var(--ink)}

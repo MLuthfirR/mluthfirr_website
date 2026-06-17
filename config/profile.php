@@ -152,6 +152,11 @@ return [
         ],
     ],
 
+    'certifications' => [
+        ['name' => 'Certified System Analyst', 'issuer' => ''],
+        ['name' => 'Certified Data Analyst',   'issuer' => ''],
+    ],
+
     'reference' => [
         'name'  => 'Muwasiq M Noor',
         'title' => 'Researcher · PwC Korea · UNESCAP Expert',

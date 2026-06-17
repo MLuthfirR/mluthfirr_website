@@ -26,7 +26,7 @@
 
     /* ---- Reveal on scroll (robust; works with or without GSAP) ---- */
     function setupReveals() {
-        var grids = ['.st', '.wk__grid', '.ex__wrap', '.ed__grid', '.cr__list'];
+        var grids = ['.st', '.wk__grid', '.ex__wrap', '.ed__grid', '.ce__grid', '.cr__list'];
         grids.forEach(function (g) {
             var p = document.querySelector(g);
             if (!p) return;

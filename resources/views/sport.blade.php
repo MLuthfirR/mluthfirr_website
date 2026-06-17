@@ -189,9 +189,23 @@
     </div>
 </section>
 
+{{-- ===== CERTIFICATIONS ===== --}}
+<section class="ce">
+    <p class="lbl reveal"><span>06</span> Certifications</p>
+    <div class="ce__grid">
+        @foreach ($p['certifications'] as $c)
+        <div class="ce__card reveal">
+            <span class="ce__badge">✓ Certified</span>
+            <h3 class="ce__name">{{ $c['name'] }}</h3>
+            @if (!empty($c['issuer']))<p class="ce__iss">{{ $c['issuer'] }}</p>@endif
+        </div>
+        @endforeach
+    </div>
+</section>
+
 {{-- ===== CONTACT ===== --}}
 <section class="ct" id="contact">
-    <p class="lbl reveal"><span>06</span> Contact</p>
+    <p class="lbl reveal"><span>07</span> Contact</p>
     <h2 class="ct__big">
         <span class="ln"><span class="ln__in">LET’S BUILD</span></span>
         <span class="ln"><span class="ln__in">SOMETHING <em>FAST</em></span></span>
