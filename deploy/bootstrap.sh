@@ -21,8 +21,11 @@ git clone -q --depth 1 "$REPO" mluthfirr_website_new
 cp /tmp/mlw.env.bak mluthfirr_website_new/.env
 cd mluthfirr_website_new
 
-echo ">>> [3/4] composer install + caches (takes ~1 min)"
-composer install --no-dev --optimize-autoloader --no-interaction --no-progress
+echo ">>> [3/4] reuse vendor + caches"
+# Reuse the already-installed vendor (no composer needed for the swap).
+cp -a "$WEB/vendor" vendor
+# Best-effort: install composer for future dependency updates (non-fatal if it fails).
+command -v composer >/dev/null || { php -r "copy('https://getcomposer.org/installer','/tmp/ci.php');" 2>/dev/null && php /tmp/ci.php --install-dir=/usr/local/bin --filename=composer --quiet 2>/dev/null && rm -f /tmp/ci.php; } || true
 mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs bootstrap/cache database
 touch database/database.sqlite 2>/dev/null || true
 php artisan config:cache >/dev/null && php artisan route:cache >/dev/null && php artisan view:cache >/dev/null
