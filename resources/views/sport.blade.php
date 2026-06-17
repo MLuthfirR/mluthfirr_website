@@ -98,53 +98,10 @@
             <div class="ab__photo" id="abPhoto">
                 <img class="ab__face" src="{{ asset('img/photo.jpg') }}" alt="{{ $p['name'] }}" loading="lazy">
                 <div class="ab__robot" aria-hidden="true">
-                    <svg class="ab__skull" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="chr" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0" stop-color="#f4f7fa"/><stop offset=".42" stop-color="#c4cdd7"/>
-                                <stop offset=".72" stop-color="#7c8794"/><stop offset="1" stop-color="#39414c"/>
-                            </linearGradient>
-                            <linearGradient id="chrH" x1="0" y1="0" x2="1" y2="0">
-                                <stop offset="0" stop-color="#576069"/><stop offset=".5" stop-color="#eaeff4"/><stop offset="1" stop-color="#576069"/>
-                            </linearGradient>
-                            <radialGradient id="eyeG" cx=".5" cy=".5" r=".5">
-                                <stop offset="0" stop-color="#fff"/><stop offset=".22" stop-color="#ffd98a"/>
-                                <stop offset=".5" stop-color="#ff7d1a"/><stop offset=".82" stop-color="#e21d00"/>
-                                <stop offset="1" stop-color="#e21d00" stop-opacity="0"/>
-                            </radialGradient>
-                            <radialGradient id="sok" cx=".5" cy=".42" r=".75">
-                                <stop offset="0" stop-color="#070809"/><stop offset="1" stop-color="#2a313a"/>
-                            </radialGradient>
-                        </defs>
-                        <path d="M200 30 C128 30 80 86 78 168 C77 202 83 226 99 248 C103 288 118 320 140 346 C158 374 178 394 200 398 C222 394 242 374 260 346 C282 320 297 288 301 248 C317 226 323 202 322 168 C320 86 272 30 200 30 Z" fill="url(#chr)" stroke="#2b323b" stroke-width="2"/>
-                        <path d="M200 34 C140 34 92 84 90 162 C90 150 150 120 200 120 C250 120 310 150 310 162 C308 84 260 34 200 34 Z" fill="url(#chrH)" opacity=".55"/>
-                        <path d="M96 150 C140 118 260 118 304 150" fill="none" stroke="#39414b" stroke-width="3" stroke-linecap="round"/>
-                        <path d="M200 36 L200 120" stroke="#39414b" stroke-width="2"/>
-                        <path d="M104 170 C140 154 176 156 190 176 L190 188 C168 174 138 176 112 192 Z" fill="#4a525d"/>
-                        <path d="M296 170 C260 154 224 156 210 176 L210 188 C232 174 262 176 288 192 Z" fill="#4a525d"/>
-                        <path d="M112 178 L186 190 L180 220 L122 226 C110 212 108 194 112 178 Z" fill="url(#sok)"/>
-                        <path d="M288 178 L214 190 L220 220 L278 226 C290 212 292 194 288 178 Z" fill="url(#sok)"/>
-                        <circle class="eye" cx="150" cy="202" r="22" fill="url(#eyeG)"/>
-                        <circle class="eye" cx="250" cy="202" r="22" fill="url(#eyeG)"/>
-                        <circle cx="150" cy="202" r="6" fill="#fff"/>
-                        <circle cx="250" cy="202" r="6" fill="#fff"/>
-                        <path d="M200 230 C195 252 189 264 182 276 L200 286 L218 276 C211 264 205 252 200 230 Z" fill="url(#sok)"/>
-                        <path d="M120 232 C120 260 132 286 150 304" fill="none" stroke="#39414b" stroke-width="2"/>
-                        <path d="M280 232 C280 260 268 286 250 304" fill="none" stroke="#39414b" stroke-width="2"/>
-                        <path d="M150 300 C168 308 232 308 250 300 L246 330 C228 340 172 340 154 330 Z" fill="url(#chrH)" stroke="#2b323b" stroke-width="1.5"/>
-                        <path d="M152 315 L248 315" stroke="#2b323b" stroke-width="1.5"/>
-                        <path d="M166 302 L164 338 M180 302 L179 339 M194 302 L194 340 M208 302 L207 340 M222 302 L223 339 M236 302 L237 338" stroke="#2b323b" stroke-width="1.4"/>
-                        <path d="M154 332 C166 364 184 386 200 388 C216 386 234 364 246 332 C228 342 172 342 154 332 Z" fill="url(#chr)" stroke="#2b323b" stroke-width="1.5"/>
-                        <circle cx="104" cy="250" r="7" fill="#5b636e" stroke="#2b323b" stroke-width="1.5"/>
-                        <circle cx="296" cy="250" r="7" fill="#5b636e" stroke="#2b323b" stroke-width="1.5"/>
-                        <circle cx="120" cy="150" r="3.5" fill="#6b7480"/>
-                        <circle cx="280" cy="150" r="3.5" fill="#6b7480"/>
-                        <circle cx="138" cy="330" r="3" fill="#6b7480"/>
-                        <circle cx="262" cy="330" r="3" fill="#6b7480"/>
-                    </svg>
+                    <img src="{{ asset('img/avatar-toon.jpg') }}" alt="" loading="lazy">
                 </div>
                 <span class="ab__ring" aria-hidden="true"></span>
-                <span class="ab__hint" aria-hidden="true">◉ Robot mode — hover to reveal</span>
+                <span class="ab__hint" aria-hidden="true">◉ Hover to reveal</span>
             </div>
             <ul class="ab__facts">
                 <li><span>Role</span><b>CEO · PT Logilink Global Utama</b></li>
