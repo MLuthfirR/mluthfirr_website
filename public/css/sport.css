@@ -112,12 +112,36 @@ section{position:relative}
 .ab__face,.ab__robot{position:absolute;inset:0}
 .ab__face{z-index:1}
 .ab__face,.ab__robot img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
-.ab__robot{z-index:2;
+.ab__robot{z-index:2;isolation:isolate;
     -webkit-mask-image:radial-gradient(circle var(--r) at var(--mx) var(--my),transparent 0,transparent 70%,#000 100%);
             mask-image:radial-gradient(circle var(--r) at var(--mx) var(--my),transparent 0,transparent 70%,#000 100%)}
-.ab__robot img{filter:grayscale(1) contrast(1.5) brightness(.78)}
-.ab__robot::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(0,0,0,.55) 2px 3px);mix-blend-mode:multiply;opacity:.6}
-.ab__robot::after{content:'';position:absolute;inset:0;background:radial-gradient(125% 90% at 50% 32%,rgba(255,42,42,.34),rgba(255,42,42,.05) 48%,rgba(0,0,0,.62));mix-blend-mode:screen}
+.ab__robot>*{position:absolute;inset:0;pointer-events:none}
+.ab__robot img{filter:grayscale(1) contrast(1.7) brightness(.92) sepia(.14) hue-rotate(170deg) saturate(.75)}
+/* chrome sheen + steel duotone */
+.ab__chrome{mix-blend-mode:overlay;background:
+    linear-gradient(118deg,rgba(206,220,236,.32) 0%,transparent 30%,transparent 66%,rgba(120,140,164,.36) 100%),
+    linear-gradient(0deg,rgba(64,78,96,.4),rgba(176,192,212,.2))}
+/* panel seams, rivets + scanlines */
+.ab__circuit{opacity:.55;mix-blend-mode:soft-light;background:
+    repeating-linear-gradient(0deg,transparent 0 2px,rgba(0,0,0,.5) 2px 3px),
+    radial-gradient(circle 2px at 17% 21%,rgba(255,255,255,.6) 60%,transparent 62%),
+    radial-gradient(circle 2px at 83% 27%,rgba(255,255,255,.6) 60%,transparent 62%),
+    radial-gradient(circle 2px at 22% 80%,rgba(255,255,255,.6) 60%,transparent 62%),
+    radial-gradient(circle 2px at 78% 84%,rgba(255,255,255,.6) 60%,transparent 62%),
+    linear-gradient(90deg,transparent 49.5%,rgba(0,0,0,.45) 50%,transparent 50.5%)}
+/* glowing ocular sensors */
+.ab__eyes::before,.ab__eyes::after{content:'';position:absolute;top:36%;width:13%;aspect-ratio:1;border-radius:50%;
+    background:radial-gradient(circle,#fff 8%,#ffb347 24%,#ff7a18 44%,#ff2200 60%,transparent 74%);
+    mix-blend-mode:screen;filter:blur(.4px);animation:eyePulse 2.4s ease-in-out infinite}
+.ab__eyes::before{left:32%}
+.ab__eyes::after{right:32%}
+@keyframes eyePulse{0%,100%{opacity:.8;transform:scale(.93)}50%{opacity:1;transform:scale(1.07)}}
+/* sweeping scan line */
+.ab__scan{overflow:hidden}
+.ab__scan::before{content:'';position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,rgba(255,64,30,.9),transparent);box-shadow:0 0 14px rgba(255,64,30,.8);animation:scanSweep 3.2s linear infinite}
+@keyframes scanSweep{0%{top:-4%}100%{top:104%}}
+/* focus vignette */
+.ab__robot::after{content:'';position:absolute;inset:0;z-index:5;pointer-events:none;background:radial-gradient(130% 100% at 50% 38%,transparent 42%,rgba(0,0,0,.62))}
 .ab__ring{position:absolute;z-index:3;left:var(--mx);top:var(--my);width:calc(var(--r) * 1.7);height:calc(var(--r) * 1.7);transform:translate(-50%,-50%);border-radius:50%;border:1.5px solid var(--acc);box-shadow:0 0 26px rgba(200,255,50,.45),inset 0 0 16px rgba(200,255,50,.22);opacity:0;pointer-events:none;transition:opacity .3s}
 .ab__hint{position:absolute;z-index:4;left:50%;bottom:1rem;transform:translateX(-50%);white-space:nowrap;font-family:var(--head);font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);background:rgba(12,13,10,.6);backdrop-filter:blur(4px);padding:.35rem .7rem;border-radius:2px;pointer-events:none;transition:opacity .3s}
 .ab__photo.is-revealing{--r:165px}

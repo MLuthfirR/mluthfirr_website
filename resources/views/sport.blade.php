@@ -97,7 +97,13 @@
         <div class="ab__side reveal">
             <div class="ab__photo" id="abPhoto">
                 <img class="ab__face" src="{{ asset('img/photo.jpg') }}" alt="{{ $p['name'] }}" loading="lazy">
-                <div class="ab__robot" aria-hidden="true"><img src="{{ asset('img/photo.jpg') }}" alt="" loading="lazy"></div>
+                <div class="ab__robot" aria-hidden="true">
+                    <img src="{{ asset('img/photo.jpg') }}" alt="" loading="lazy">
+                    <span class="ab__chrome"></span>
+                    <span class="ab__circuit"></span>
+                    <span class="ab__eyes"></span>
+                    <span class="ab__scan"></span>
+                </div>
                 <span class="ab__ring" aria-hidden="true"></span>
                 <span class="ab__hint" aria-hidden="true">◉ Robot mode — hover to reveal</span>
             </div>
