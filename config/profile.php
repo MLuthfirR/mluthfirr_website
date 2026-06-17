@@ -116,11 +116,11 @@ return [
         [
             'name'     => 'Logilink Smart Customer Services',
             'category' => 'Live Internal Platform',
-            'desc'     => 'A production multi-agent WhatsApp customer-service platform running live at Logilink: '
-                .'a Laravel dashboard paired with a Node/Baileys gateway, with a real-time inbox, auto-assignment & '
-                .'smart routing, ticketing, message templates and per-agent performance analytics. Access is '
-                .'restricted to the Logilink support team.',
-            'tags'     => ['Laravel', 'Node / Baileys', 'Real-time'],
+            'desc'     => 'The customer-service platform we run live at Logilink. It brings every customer '
+                .'WhatsApp conversation into one shared team inbox, automatically routes and assigns each chat to '
+                .'the right agent, and handles ticketing, quick replies and per-agent performance tracking, so the '
+                .'support team can respond faster and more consistently. Access is restricted to the Logilink support team.',
+            'tags'     => ['Customer Service', 'WhatsApp', 'Team Inbox'],
             'url'      => 'https://cs.mluthfirr.id',
             'cta'      => 'Open platform',
             'accent'   => 'c',

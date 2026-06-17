@@ -69,7 +69,7 @@
     <div class="hero__grid">
         <div class="hero__text">
             <div class="hero__meta">
-                <span class="hero__status"><i></i> Available for work</span>
+                <span class="hero__status"><i></i> Available for Collaboration &amp; Partnership</span>
                 <span class="hero__metasep"></span>
                 <span>{{ $p['location'] }}</span>
             </div>
