@@ -22,6 +22,13 @@ return [
     'phone'     => '(+62) 878-0943-2148',
     'phone_raw' => '6287809432148',
 
+    // Images (editable in admin; paths relative to /public)
+    'hero_image'       => 'img/hero.jpg',
+    'about_image'      => 'img/avatar-toon.jpg',
+    'about_real_image' => 'img/photo.jpg',
+    'logo_mark'        => 'img/logo-mark.png',
+    'logo_full'        => 'img/logo-full.png',
+
     'about' => 'Technology leader with a decade of experience spanning fullstack development, '
         .'IoT, artificial intelligence and large-scale logistics platforms. I’ve taken products '
         .'from a blank page to nationwide adoption, including Indonesia’s first logistics digital '

@@ -15,7 +15,7 @@
     <meta name="theme-color" content="#0c0d0a">
     <meta property="og:title" content="{{ $p['name'] }} — {{ $p['role'] }}">
     <meta property="og:description" content="{{ $p['tagline'] }}">
-    <meta property="og:image" content="{{ asset('img/hero.jpg') }}">
+    <meta property="og:image" content="{{ asset($p['hero_image'] ?? 'img/hero.jpg') }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
 
 {{-- ===== Loader ===== --}}
 <div class="ld" id="loader">
-    <img class="ld__logo" src="{{ asset('img/logo-mark.png') }}" alt="{{ $p['initials'] }}">
+    <img class="ld__logo" src="{{ asset($p['logo_mark'] ?? 'img/logo-mark.png') }}" alt="{{ $p['initials'] }}">
     <span class="ld__num" id="loaderCount">0</span>
     <div class="ld__bar"><span id="loaderBar"></span></div>
     <span class="ld__tag">{{ strtoupper($p['name']) }}</span>
@@ -42,7 +42,7 @@
 
 {{-- ===== Nav ===== --}}
 <header class="nav" id="nav">
-    <a href="#top" class="nav__logo" data-cur="link"><img src="{{ asset('img/logo-mark.png') }}" alt="{{ $p['initials'] }}"></a>
+    <a href="#top" class="nav__logo" data-cur="link"><img src="{{ asset($p['logo_mark'] ?? 'img/logo-mark.png') }}" alt="{{ $p['initials'] }}"></a>
     <nav class="nav__menu">
         <a href="#about" data-cur="link">About</a>
         <a href="#career" data-cur="link">Career</a>
@@ -70,7 +70,7 @@
             </h1>
         </div>
         <div class="hero__media" data-cur="view">
-            <div class="hero__photo"><img src="{{ asset('img/hero.jpg') }}" alt="{{ $p['name'] }}"></div>
+            <div class="hero__photo"><img src="{{ asset($p['hero_image'] ?? 'img/hero.jpg') }}" alt="{{ $p['name'] }}"></div>
             <span class="hero__badge">{{ $p['location'] }}</span>
         </div>
         <div class="hero__foot">
@@ -96,9 +96,9 @@
         <h2 class="ab__lead" data-splitwords>{{ $p['about'] }}</h2>
         <div class="ab__side reveal">
             <div class="ab__photo" id="abPhoto">
-                <img class="ab__face" src="{{ asset('img/photo.jpg') }}" alt="{{ $p['name'] }}" loading="lazy">
+                <img class="ab__face" src="{{ asset($p['about_real_image'] ?? 'img/photo.jpg') }}" alt="{{ $p['name'] }}" loading="lazy">
                 <div class="ab__robot" aria-hidden="true">
-                    <img src="{{ asset('img/avatar-toon.jpg') }}" alt="" loading="lazy">
+                    <img src="{{ asset($p['about_image'] ?? 'img/avatar-toon.jpg') }}" alt="" loading="lazy">
                 </div>
                 <span class="ab__ring" aria-hidden="true"></span>
                 <span class="ab__hint" aria-hidden="true">◉ Hover to reveal</span>
@@ -222,7 +222,7 @@
 </main>
 
 <footer class="ft">
-    <img class="ft__logo" src="{{ asset('img/logo-full.png') }}" alt="{{ $p['name'] }}">
+    <img class="ft__logo" src="{{ asset($p['logo_full'] ?? 'img/logo-full.png') }}" alt="{{ $p['name'] }}">
     <div class="ft__bar">
         <span>© {{ date('Y') }} {{ $p['name'] }}</span>
         <a href="#top" data-cur="link">Back to top ↑</a>
