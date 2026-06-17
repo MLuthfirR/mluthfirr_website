@@ -1,6 +1,7 @@
 @php
     $nameWords = preg_split('/\s+/', trim($p['name']));
     $kw = ['Artificial Intelligence','IoT','Logistics','Fullstack','Robotics','Research','Strategy','Leadership'];
+    $aboutParts = preg_split('/(?<=\.)\s+/', trim($p['about']), 2);
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -115,7 +116,27 @@
 {{-- ===== ABOUT ===== --}}
 <section class="about" id="about">
     <p class="sec-label reveal"><span>01</span> About</p>
-    <p class="about__text" data-splitwords>{{ $p['about'] }}</p>
+    <h2 class="about__lead" data-splitwords>{{ $aboutParts[0] }}</h2>
+    <div class="about__grid">
+        <aside class="about__aside">
+            <div class="about__card reveal">
+                <span class="about__k">Currently</span>
+                <span class="about__v">{{ $p['experiences'][0]['role'] }}</span>
+                <span class="about__s">{{ $p['experiences'][0]['company'] }}</span>
+            </div>
+            <div class="about__card reveal">
+                <span class="about__k">Focus</span>
+                <span class="about__v">Digital Platforms · AI · IoT</span>
+            </div>
+            <div class="about__card reveal">
+                <span class="about__k">Based in</span>
+                <span class="about__v">{{ $p['location'] }}</span>
+            </div>
+        </aside>
+        <div class="about__main">
+            <p class="about__body reveal">{{ $aboutParts[1] ?? '' }}</p>
+        </div>
+    </div>
 </section>
 
 {{-- ===== EXPERIENCE ===== --}}

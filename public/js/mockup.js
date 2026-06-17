@@ -130,7 +130,7 @@
 
     /* ---- About: word-by-word highlight ---- */
     (function () {
-        var at = document.querySelector('.about__text'); if (!at) return;
+        var at = document.querySelector('[data-splitwords]'); if (!at) return;
         var words = at.textContent.trim().split(/\s+/);
         at.innerHTML = words.map(function (w) { return '<span class="w">' + w + '</span>'; }).join(' ');
         gsap.to(at.querySelectorAll('.w'), {
