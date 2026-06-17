@@ -6,6 +6,8 @@
     <title>{{ $p['name'] }} — {{ $p['role'] }}</title>
     <meta name="description" content="{{ $p['name'] }} · {{ $p['role'] }}. {{ $p['tagline'] }}">
     <meta name="author" content="{{ $p['name'] }}">
+    <meta name="theme-color" content="#07070c">
+    <meta name="color-scheme" content="dark light">
 
     <meta property="og:type" content="profile">
     <meta property="og:title" content="{{ $p['name'] }} — {{ $p['role'] }}">
