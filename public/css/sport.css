@@ -209,7 +209,7 @@ section{position:relative}
 
 /* ---------- footer ---------- */
 .ft{padding:clamp(3rem,6vw,5rem) var(--pad) 2.4rem;border-top:1px solid var(--line);max-width:var(--maxw);margin:0 auto}
-.ft__logo{height:clamp(44px,7vw,64px);filter:brightness(0) invert(1);opacity:.85;margin:0 auto 2rem}
+.ft__logo{height:clamp(72px,12vw,120px);filter:brightness(0) invert(1);opacity:.9;margin:0 auto 2.2rem}
 .ft__bar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;padding-top:1.5rem;border-top:1px solid var(--line);color:var(--dim);font-family:var(--head);font-size:.82rem}
 .ft__bar a:hover{color:var(--acc)}
 
