@@ -3,6 +3,26 @@
     $lastWords = preg_split('/\s+/', trim(strtoupper($p['last'])));
     $kw = ['Programmer','Project Manager','Researcher','CEO','AI','IoT','Logistics','Robotics'];
     $num = '97';
+
+    // --- SEO / structured data ---
+    $seoDesc   = trim($p['name'] . ' — ' . $p['role'] . '. ' . $p['tagline']);
+    $canonical = url('/');
+    $heroImg   = url($p['hero_image'] ?? 'img/hero.jpg');
+    $sameAs    = array_values(array_filter(array_merge([$p['website_url'] ?? null], (array) ($p['socials'] ?? []))));
+    $ld = array_filter([
+        '@context'    => 'https://schema.org',
+        '@type'       => 'Person',
+        'name'        => $p['name'],
+        'jobTitle'    => $p['role'],
+        'url'         => $canonical,
+        'image'       => $heroImg,
+        'description' => $p['tagline'],
+        'email'       => !empty($p['email']) ? 'mailto:' . $p['email'] : null,
+        'address'     => !empty($p['location']) ? ['@type' => 'PostalAddress', 'addressLocality' => $p['location']] : null,
+        'worksFor'    => array_filter(['@type' => 'Organization', 'name' => 'PT Logilink Global Utama', 'url' => $p['website_url'] ?? null]),
+        'alumniOf'    => !empty($p['education']) ? array_map(fn ($e) => ['@type' => 'CollegeOrUniversity', 'name' => $e['school'] ?? ''], $p['education']) : null,
+        'sameAs'      => $sameAs ?: null,
+    ]);
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -11,11 +31,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $p['name'] }} · {{ $p['role'] }}</title>
-    <meta name="description" content="{{ $p['tagline'] }}">
+    <meta name="description" content="{{ $seoDesc }}">
+    <meta name="author" content="{{ $p['name'] }}">
+    <link rel="canonical" href="{{ $canonical }}">
     <meta name="theme-color" content="#0c0d0a">
+    @if (!empty($p['google_verification']))
+    <meta name="google-site-verification" content="{{ $p['google_verification'] }}">
+    @endif
+
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="{{ $canonical }}">
+    <meta property="og:site_name" content="{{ $p['name'] }}">
     <meta property="og:title" content="{{ $p['name'] }} — {{ $p['role'] }}">
-    <meta property="og:description" content="{{ $p['tagline'] }}">
-    <meta property="og:image" content="{{ asset($p['hero_image'] ?? 'img/hero.jpg') }}">
+    <meta property="og:description" content="{{ $seoDesc }}">
+    <meta property="og:image" content="{{ $heroImg }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $p['name'] }} — {{ $p['role'] }}">
+    <meta name="twitter:description" content="{{ $seoDesc }}">
+    <meta name="twitter:image" content="{{ $heroImg }}">
+    <script type="application/ld+json">{!! json_encode($ld, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -9,6 +9,7 @@ use App\Http\Middleware\TrackVisit;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->middleware(TrackVisit::class);
+Route::get('/sitemap.xml', [PageController::class, 'sitemap']);
 
 // Old mockup URL now redirects to the homepage (the design lives at "/").
 Route::redirect('/mockup', '/', 301);

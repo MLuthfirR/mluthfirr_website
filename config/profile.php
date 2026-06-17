@@ -22,6 +22,10 @@ return [
     'phone'     => '(+62) 878-0943-2148',
     'phone_raw' => '6287809432148',
 
+    // SEO (editable in admin)
+    'socials'             => [],   // profile URLs (LinkedIn, GitHub, etc.) for search engines
+    'google_verification' => '',   // Google Search Console "HTML tag" verification code
+
     // Images (editable in admin; paths relative to /public)
     'hero_image'       => 'img/hero.jpg',
     'about_image'      => 'img/avatar-toon.jpg',

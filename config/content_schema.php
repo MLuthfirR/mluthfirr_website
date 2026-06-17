@@ -25,6 +25,8 @@ return [
             'phone_raw'   => ['label' => 'Phone (WhatsApp, digits only)', 'type' => 'text'],
             'website'     => ['label' => 'Website (display)', 'type' => 'text'],
             'website_url' => ['label' => 'Website URL', 'type' => 'text'],
+            'socials'     => ['label' => 'Social / profile links for Google (comma-separated URLs)', 'type' => 'taglist'],
+            'google_verification' => ['label' => 'Google Search Console verification code (from the "HTML tag" method)', 'type' => 'text'],
             'hero_image'        => ['label' => 'Hero photo', 'type' => 'image'],
             'about_image'       => ['label' => 'About image (shown by default / illustration)', 'type' => 'image'],
             'about_real_image'  => ['label' => 'About image (revealed on hover)', 'type' => 'image'],
