@@ -95,7 +95,12 @@
     <div class="ab__grid">
         <h2 class="ab__lead" data-splitwords>{{ $p['about'] }}</h2>
         <div class="ab__side reveal">
-            <div class="ab__photo"><img src="{{ asset('img/photo.jpg') }}" alt="{{ $p['name'] }}" loading="lazy"></div>
+            <div class="ab__photo" id="abPhoto">
+                <img class="ab__face" src="{{ asset('img/photo.jpg') }}" alt="{{ $p['name'] }}" loading="lazy">
+                <div class="ab__robot" aria-hidden="true"><img src="{{ asset('img/photo.jpg') }}" alt="" loading="lazy"></div>
+                <span class="ab__ring" aria-hidden="true"></span>
+                <span class="ab__hint" aria-hidden="true">◉ Robot mode — hover to reveal</span>
+            </div>
             <ul class="ab__facts">
                 <li><span>Role</span><b>CEO · PT Logilink Global Utama</b></li>
                 <li><span>Focus</span><b>Digital Platforms · AI · IoT</b></li>

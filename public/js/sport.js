@@ -9,6 +9,21 @@
 
     function showAll() { root.classList.remove('is-animating'); if (loader) loader.style.display = 'none'; }
 
+    /* ---- About: robot-mask reveal that follows the cursor (runs in all paths) ---- */
+    (function () {
+        var pf = document.getElementById('abPhoto'); if (!pf) return;
+        var fine = true; try { fine = matchMedia('(hover:hover) and (pointer:fine)').matches; } catch (e) {}
+        if (!fine) return;
+        function move(e) {
+            var r = pf.getBoundingClientRect();
+            pf.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+            pf.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        }
+        pf.addEventListener('pointerenter', function (e) { move(e); pf.classList.add('is-revealing'); });
+        pf.addEventListener('pointermove', move);
+        pf.addEventListener('pointerleave', function () { pf.classList.remove('is-revealing'); });
+    })();
+
     /* ---- Reveal on scroll (robust; works with or without GSAP) ---- */
     function setupReveals() {
         var grids = ['.st', '.wk__grid', '.ex__wrap', '.ed__grid', '.cr__list'];
