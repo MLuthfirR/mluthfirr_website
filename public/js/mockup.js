@@ -10,6 +10,17 @@
 
     function showAll() { root.classList.remove('is-animating'); if (loader) loader.style.display = 'none'; }
 
+    /* ---- Theme toggle (runs in all paths, including reduced-motion) ---- */
+    (function () {
+        var btn = document.getElementById('themeToggle'); if (!btn) return;
+        var meta = document.querySelector('meta[name="theme-color"]');
+        btn.addEventListener('click', function () {
+            var light = root.classList.toggle('light');
+            try { localStorage.setItem('mk-theme', light ? 'light' : 'dark'); } catch (e) {}
+            if (meta) meta.setAttribute('content', light ? '#f3f4f7' : '#08080b');
+        });
+    })();
+
     /* ---- Reveal on scroll (robust; works with or without GSAP) ---- */
     function setupReveals() {
         var groups = ['.stats', '.skills__grid', '.pf__grid', '.edu__grid', '.work__list'];
@@ -123,7 +134,7 @@
         var words = at.textContent.trim().split(/\s+/);
         at.innerHTML = words.map(function (w) { return '<span class="w">' + w + '</span>'; }).join(' ');
         gsap.to(at.querySelectorAll('.w'), {
-            color: '#f4f4f7', stagger: 1, ease: 'none',
+            opacity: 1, stagger: 1, ease: 'none',
             scrollTrigger: { trigger: at, start: 'top 80%', end: 'bottom 65%', scrub: 0.5 }
         });
     })();

@@ -6,6 +6,7 @@
 <html lang="en">
 <head>
     <script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('is-animating');}catch(e){}</script>
+    <script>try{if(localStorage.getItem('mk-theme')==='light')document.documentElement.classList.add('light');}catch(e){}</script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $p['name'] }} · {{ $p['role'] }}</title>
@@ -51,7 +52,13 @@
         <a href="#portfolio" data-cursor="link">Portfolio</a>
         <a href="#contact" data-cursor="link">Contact</a>
     </nav>
-    <a href="#contact" class="nav__cta" data-cursor="link"><span>Get in touch</span></a>
+    <div class="nav__actions">
+        <button class="nav__theme" id="themeToggle" type="button" data-cursor="link" aria-label="Toggle light / dark theme">
+            <svg class="ic ic--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+            <svg class="ic ic--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2 12h2.5M19.5 12H22M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        </button>
+        <a href="#contact" class="nav__cta" data-cursor="link"><span>Get in touch</span></a>
+    </div>
 </header>
 
 <main id="top">
