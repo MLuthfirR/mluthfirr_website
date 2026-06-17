@@ -27,9 +27,12 @@
 
 {{-- ===== Loader ===== --}}
 <div class="ld" id="loader">
-    <span class="ld__num" id="loaderCount">0</span>
+    <img class="ld__logo" src="{{ asset('img/logo-mark.png') }}" alt="{{ $p['initials'] }}">
     <div class="ld__bar"><span id="loaderBar"></span></div>
-    <span class="ld__tag">{{ strtoupper($p['name']) }}</span>
+    <div class="ld__meta">
+        <span class="ld__tag">{{ strtoupper($p['name']) }}</span>
+        <span class="ld__num" id="loaderCount">0</span>
+    </div>
 </div>
 
 {{-- ===== Custom cursor ===== --}}
