@@ -6,5 +6,7 @@ Route::get('/', function () {
     return view('mockup', ['p' => config('profile')]);
 });
 
-// Old mockup URL now redirects to the homepage (the design lives at "/").
-Route::redirect('/mockup', '/', 301);
+// Alternate sport-brand concept (Lando-Norris-genre inspired).
+Route::get('/mockup', function () {
+    return view('sport', ['p' => config('profile')]);
+});
