@@ -67,8 +67,8 @@
                     <span class="line"><span class="line__in">{{ strtoupper($w) }}</span></span>
                 @endforeach
             </h1>
-            <p class="hero__lead reveal">{{ $p['tagline'] }}</p>
-            <div class="hero__cta reveal">
+            <p class="hero__lead">{{ $p['tagline'] }}</p>
+            <div class="hero__cta">
                 <a href="#contact" class="btn btn--solid" data-cursor="link"><span>Let’s talk</span></a>
                 <a href="#work" class="btn btn--line" data-cursor="link"><span>View work</span></a>
             </div>
@@ -126,29 +126,26 @@
     </ul>
 </section>
 
-{{-- ===== PORTFOLIO (horizontal scroll) ===== --}}
+{{-- ===== PORTFOLIO ===== --}}
 <section class="pf" id="portfolio">
-    <div class="pf__pin" id="pfPin">
-        <div class="pf__intro">
-            <p class="sec-label"><span>03</span> Portfolio</p>
-            <h2 class="sec-title">Products<br>I’ve shipped.</h2>
-            <p class="pf__hint">Scroll →</p>
-        </div>
-        <div class="pf__track" id="pfTrack">
-            @foreach ($p['portfolio'] as $item)
-            <a class="pf__card" href="{{ $item['url'] }}" target="_blank" rel="noopener" data-cursor="view">
-                @if (!empty($item['preview']))
-                <div class="pf__shot"><img src="{{ asset($item['preview']) }}" alt="{{ $item['name'] }}" loading="lazy"></div>
-                @endif
-                <div class="pf__meta">
-                    <span class="pf__cat">{{ $item['category'] }}</span>
-                    <h3 class="pf__name">{{ $item['name'] }}</h3>
-                    <p class="pf__desc">{{ $item['desc'] }}</p>
-                    <span class="pf__go">{{ $item['cta'] }} ↗</span>
-                </div>
-            </a>
-            @endforeach
-        </div>
+    <div class="sec-head">
+        <p class="sec-label reveal"><span>03</span> Portfolio</p>
+        <h2 class="sec-title reveal">Products I’ve shipped &amp; lead.</h2>
+    </div>
+    <div class="pf__grid">
+        @foreach ($p['portfolio'] as $item)
+        <a class="pf__card reveal" href="{{ $item['url'] }}" target="_blank" rel="noopener" data-cursor="view">
+            @if (!empty($item['preview']))
+            <div class="pf__shot"><img src="{{ asset($item['preview']) }}" alt="{{ $item['name'] }}" loading="lazy"></div>
+            @endif
+            <div class="pf__meta">
+                <span class="pf__cat">{{ $item['category'] }}</span>
+                <h3 class="pf__name">{{ $item['name'] }}</h3>
+                <p class="pf__desc">{{ $item['desc'] }}</p>
+                <span class="pf__go">{{ $item['cta'] }} ↗</span>
+            </div>
+        </a>
+        @endforeach
     </div>
 </section>
 
