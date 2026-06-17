@@ -58,15 +58,20 @@
 
 {{-- ===== HERO ===== --}}
 <section class="hero" id="hero">
-    <div class="hero__bgname" aria-hidden="true"><span data-marq>{{ strtoupper($p['last']) }} — {{ strtoupper($p['last']) }} — </span></div>
+    <div class="hero__bgname" aria-hidden="true"><span data-marq>{{ strtoupper($p['last']) }} &nbsp;/&nbsp; {{ strtoupper($p['last']) }} &nbsp;/&nbsp; </span></div>
     <div class="hero__grid">
         <div class="hero__text">
-            <p class="hero__eyebrow"><span class="dot"></span> {{ $p['role'] }}</p>
+            <div class="hero__meta">
+                <span class="hero__status"><i></i> Available for work</span>
+                <span class="hero__metasep"></span>
+                <span>{{ $p['location'] }}</span>
+            </div>
             <h1 class="hero__name">
-                @foreach ($nameWords as $w)
-                    <span class="line"><span class="line__in">{{ strtoupper($w) }}</span></span>
+                @foreach ($nameWords as $i => $w)
+                    <span class="line" style="--i:{{ $i }}"><span class="line__in">{{ strtoupper($w) }}</span></span>
                 @endforeach
             </h1>
+            <p class="hero__role">{{ $p['role'] }}</p>
             <p class="hero__lead">{{ $p['tagline'] }}</p>
             <div class="hero__cta">
                 <a href="#contact" class="btn btn--solid" data-cursor="link"><span>Let’s talk</span></a>
@@ -75,12 +80,20 @@
         </div>
         <div class="hero__media">
             <div class="hero__photo" data-cursor="view">
+                <span class="hero__livery" aria-hidden="true"></span>
                 <img src="{{ asset('img/hero.jpg') }}" alt="{{ $p['name'] }}">
                 <span class="hero__photo-tag">{{ $p['location'] }}</span>
             </div>
         </div>
     </div>
-    <a href="#about" class="hero__scroll" data-cursor="link"><span>Scroll</span><i></i></a>
+    <div class="hero__strip">
+        @foreach ($p['stats'] as $s)
+        <div class="hero__cell">
+            <span class="hero__cellnum">{{ $s['value'] }}</span>
+            <span class="hero__celllbl">{{ $s['label'] }}</span>
+        </div>
+        @endforeach
+    </div>
 </section>
 
 {{-- ===== Marquee ===== --}}
@@ -96,16 +109,6 @@
 <section class="about" id="about">
     <p class="sec-label reveal"><span>01</span> About</p>
     <p class="about__text" data-splitwords>{{ $p['about'] }}</p>
-</section>
-
-{{-- ===== STATS ===== --}}
-<section class="stats">
-    @foreach ($p['stats'] as $s)
-    <div class="stat reveal">
-        <span class="stat__num" data-count="{{ $s['value'] }}">{{ $s['value'] }}</span>
-        <span class="stat__label">{{ $s['label'] }}</span>
-    </div>
-    @endforeach
 </section>
 
 {{-- ===== EXPERIENCE ===== --}}

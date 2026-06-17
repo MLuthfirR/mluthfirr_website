@@ -106,14 +106,7 @@
     /* ---- Reveals (IO) ---- */
     setupReveals();
 
-    /* ---- Hero entrance (GSAP timeline, played after loader) ---- */
-    gsap.set('.hero__name .line__in', { yPercent: 110 });
-    gsap.set('.hero__photo img', { scale: 1.25 });
-    gsap.set(['.hero__lead', '.hero__cta'], { opacity: 0, y: 26 });
-    var heroTl = gsap.timeline({ paused: true });
-    heroTl.to('.hero__name .line__in', { yPercent: 0, duration: 1.05, ease: 'power4.out', stagger: 0.12 })
-        .to('.hero__photo img', { scale: 1, duration: 1.5, ease: 'power3.out' }, 0)
-        .to(['.hero__lead', '.hero__cta'], { opacity: 1, y: 0, duration: 0.85, ease: 'power2.out', stagger: 0.12 }, 0.5);
+    /* ---- Hero entrance is pure CSS (keyed off html.is-animating) — no JS dependency ---- */
 
     /* ---- Marquees (markup duplicated for seamless loop) ---- */
     gsap.utils.toArray('[data-marq]').forEach(function (el, i) {
@@ -142,16 +135,12 @@
     gsap.timeline()
         .to(o, { v: 100, duration: 1.2, ease: 'power2.inOut', onUpdate: function () { if (lc) lc.textContent = Math.round(o.v); } }, 0)
         .to(lb, { width: '100%', duration: 1.2, ease: 'power2.inOut' }, 0)
-        .to(loader, { yPercent: -100, duration: 0.9, ease: 'power4.inOut', onComplete: function () { if (loader) loader.style.display = 'none'; ScrollTrigger.refresh(); } }, 1.3)
-        .add(function () { heroTl.play(0); }, 1.5);
+        .to(loader, { yPercent: -100, duration: 0.9, ease: 'power4.inOut', onComplete: function () { if (loader) loader.style.display = 'none'; ScrollTrigger.refresh(); } }, 1.3);
 
     addEventListener('load', function () { ScrollTrigger.refresh(); });
 
-    /* ---- Fail-safe: never leave the hero name or contact headline hidden ---- */
+    /* ---- Fail-safe: never leave the contact headline hidden ---- */
     setTimeout(function () {
         var c = document.querySelector('.contact__big'); if (c) c.classList.add('in');
-        gsap.set('.hero__name .line__in', { yPercent: 0 });
-        gsap.set(['.hero__lead', '.hero__cta'], { opacity: 1, y: 0 });
-        gsap.set('.hero__photo img', { scale: 1 });
     }, 3500);
 })();
