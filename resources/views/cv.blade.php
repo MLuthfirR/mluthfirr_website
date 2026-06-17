@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $p['name'] }} — {{ $p['role'] }}</title>
+    <title>{{ $p['name'] }} · {{ $p['role'] }}</title>
     <meta name="description" content="{{ $p['name'] }} · {{ $p['role'] }}. {{ $p['tagline'] }}">
     <meta name="author" content="{{ $p['name'] }}">
     <meta name="theme-color" content="#07070c">
     <meta name="color-scheme" content="dark light">
 
     <meta property="og:type" content="profile">
-    <meta property="og:title" content="{{ $p['name'] }} — {{ $p['role'] }}">
+    <meta property="og:title" content="{{ $p['name'] }} · {{ $p['role'] }}">
     <meta property="og:description" content="{{ $p['tagline'] }}">
     <meta property="og:image" content="{{ asset('img/logo-full.png') }}">
 

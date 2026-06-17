@@ -14,7 +14,7 @@ return [
     'last'      => 'Luthfir Rahman',
     'initials'  => 'MLR',
     'role'      => 'Programmer, Project Manager & Researcher',
-    'tagline'   => 'Building Indonesia’s digital logistics, AI & IoT future — from blueprint to production.',
+    'tagline'   => 'Building Indonesia’s digital logistics, AI & IoT future, from blueprint to production.',
     'location'  => 'South Tangerang, Indonesia',
     'website'   => 'www.logilink.id',
     'website_url' => 'https://www.logilink.id',
@@ -24,8 +24,8 @@ return [
 
     'about' => 'Technology leader with a decade of experience spanning fullstack development, '
         .'IoT, artificial intelligence and large-scale logistics platforms. I’ve taken products '
-        .'from a blank page to nationwide adoption — including Indonesia’s first logistics digital '
-        .'platform and the Kartu Prakerja program — and currently lead engineering strategy as CEO '
+        .'from a blank page to nationwide adoption, including Indonesia’s first logistics digital '
+        .'platform and the Kartu Prakerja program, and currently lead engineering strategy as CEO '
         .'of PT Logilink Global Utama.',
 
     'stats' => [
@@ -39,40 +39,40 @@ return [
         [
             'role'    => 'Chief Executive Officer',
             'company' => 'PT Logilink Global Utama',
-            'period'  => '2023 — Now',
+            'period'  => '2023 - Now',
             'current' => true,
             'summary' => 'Define and execute the company’s technology strategy, oversee system '
                 .'architecture and software development, and lead engineering teams to deliver secure, '
-                .'scalable and reliable platforms — aligning technology with business objectives, '
+                .'scalable and reliable platforms that align technology with business objectives, '
                 .'regulatory requirements and operational needs while driving continuous innovation.',
             'tags' => ['Leadership', 'System Architecture', 'Strategy'],
         ],
         [
             'role'    => 'Assistant Researcher',
             'company' => 'PwC Republic of Korea',
-            'period'  => '2024 — 2025',
+            'period'  => '2024 - 2025',
             'current' => false,
             'summary' => 'Conducted research on the Electronic Certificate of Origin between ASEAN '
                 .'countries and the Republic of Korea, identifying the most effective and efficient '
                 .'solutions for cross-border data and document exchange.',
-            'tags' => ['Research', 'e-CO', 'ASEAN–Korea'],
+            'tags' => ['Research', 'e-CO', 'ASEAN-Korea'],
         ],
         [
             'role'    => 'Fullstack Web Developer',
             'company' => 'PT GUUD Logistics Indonesia',
-            'period'  => '2020 — 2023',
+            'period'  => '2020 - 2023',
             'current' => false,
-            'summary' => 'Developed the first logistics digital platform in Indonesia — Container Depot '
-                .'Management, Yard Management, Customs Clearance, Port Gatepass and Invoice Financing systems.',
+            'summary' => 'Developed the first logistics digital platform in Indonesia, covering Container '
+                .'Depot Management, Yard Management, Customs Clearance, Port Gatepass and Invoice Financing systems.',
             'tags' => ['Laravel', 'Fullstack', 'Logistics'],
         ],
         [
-            'role'    => 'IT Expert — Kartu Prakerja',
+            'role'    => 'IT Expert, Kartu Prakerja',
             'company' => 'Coordinating Ministry for Economic Affairs, Republic of Indonesia',
             'period'  => '2020',
             'current' => false,
-            'summary' => 'Built prototypes for Kartu Prakerja Indonesia — from blueprints, requirement '
-                .'gathering and data analytics to fullstack development and project management — taking the '
+            'summary' => 'Built prototypes for Kartu Prakerja Indonesia, from blueprints, requirement '
+                .'gathering and data analytics to fullstack development and project management, taking the '
                 .'product all the way to market with no initial blueprint to work from.',
             'tags' => ['GovTech', 'Prototyping', 'Data Analytics'],
         ],
@@ -81,7 +81,7 @@ return [
             'company' => 'PT Total Optima Energi',
             'period'  => '2019',
             'current' => false,
-            'summary' => 'Created an OEE system to track industrial machine effectiveness — collecting data '
+            'summary' => 'Created an OEE system to track industrial machine effectiveness, collecting data '
                 .'through a Node-RED middleware and surfacing it in a custom dashboard to support executive '
                 .'decision-making.',
             'tags' => ['IoT', 'Node-RED', 'Dashboards'],
@@ -92,7 +92,7 @@ return [
         [
             'name'     => 'Logilink',
             'category' => 'Company · Digital Platforms',
-            'desc'     => 'The technology company I lead as CEO of PT Logilink Global Utama — building secure, '
+            'desc'     => 'The technology company I lead as CEO of PT Logilink Global Utama, building secure, '
                 .'scalable digital platforms across logistics, AI and IoT, and helping enterprises digitize complex '
                 .'supply-chain and operational workflows end to end.',
             'tags'     => ['Logistics', 'AI', 'IoT'],
@@ -104,9 +104,9 @@ return [
         [
             'name'     => 'Benua Laut Lepas',
             'category' => 'Port Operating System',
-            'desc'     => 'A modern Port Operating System (POS) that digitizes end-to-end seaport operations — '
-                .'vessel & berth planning, yard and gate management, and real-time cargo visibility — to lift '
-                .'throughput, accuracy and transparency across terminals.',
+            'desc'     => 'A modern Port Operating System (POS) that digitizes seaport operations end to end, '
+                .'from vessel and berth planning to yard and gate management and real-time cargo visibility, '
+                .'lifting throughput, accuracy and transparency across terminals.',
             'tags'     => ['Port Ops', 'Maritime', 'Logistics'],
             'url'      => 'https://bll-sts.com',
             'cta'      => 'Visit bll-sts.com',
@@ -116,7 +116,7 @@ return [
         [
             'name'     => 'Logilink Smart Customer Services',
             'category' => 'Live Internal Platform',
-            'desc'     => 'A production multi-agent WhatsApp customer-service platform running live at Logilink — '
+            'desc'     => 'A production multi-agent WhatsApp customer-service platform running live at Logilink: '
                 .'a Laravel dashboard paired with a Node/Baileys gateway, with a real-time inbox, auto-assignment & '
                 .'smart routing, ticketing, message templates and per-agent performance analytics. Access is '
                 .'restricted to the Logilink support team.',
@@ -143,12 +143,12 @@ return [
         [
             'degree' => 'Master of Computer Science',
             'school' => 'Universitas Indonesia',
-            'period' => '2020 — 2023',
+            'period' => '2020 - 2023',
         ],
         [
             'degree' => 'Bachelor of Computer Science',
             'school' => 'IPB University',
-            'period' => '2015 — 2019',
+            'period' => '2015 - 2019',
         ],
     ],
 
