@@ -87,7 +87,7 @@
                     <span class="avatar__ring"></span>
                     <span class="avatar__ring avatar__ring--2"></span>
                     <span class="avatar__disc">
-                        <img class="avatar__logo logo-img" src="{{ asset('img/logo-mark.png') }}" alt="{{ $p['initials'] }}">
+                        <img class="avatar__photo" src="{{ asset('img/photo.jpg') }}" alt="{{ $p['name'] }}" width="512" height="512" loading="eager">
                     </span>
                 </div>
                 <p class="avatar-card__name">{{ $p['name'] }}</p>
