@@ -118,9 +118,9 @@
         @foreach ($p['experiences'] as $i => $exp)
         <li class="work__item" data-cursor="link">
             <span class="work__idx">{{ sprintf('%02d', $i + 1) }}</span>
-            <div class="work__role"><h3>{{ $exp['role'] }}</h3><p>{{ $exp['company'] }}</p></div>
+            <div class="work__role"><h3>{{ $exp['role'] }}</h3><p class="work__co">{{ $exp['company'] }}</p></div>
+            <p class="work__sum">{{ $exp['summary'] }}</p>
             <span class="work__period">{{ $exp['period'] }}</span>
-            <div class="work__hover" aria-hidden="true"><p>{{ $exp['summary'] }}</p></div>
         </li>
         @endforeach
     </ul>
@@ -176,7 +176,7 @@
 {{-- ===== CONTACT ===== --}}
 <section class="contact" id="contact">
     <p class="sec-label reveal"><span>06</span> Contact</p>
-    <h2 class="contact__big">
+    <h2 class="contact__big reveal">
         <span class="line"><span class="line__in">LET’S BUILD</span></span>
         <span class="line"><span class="line__in">SOMETHING <em>REAL</em></span></span>
     </h2>

@@ -135,12 +135,7 @@
         });
     })();
 
-    /* ---- Contact headline reveal ---- */
-    gsap.set('.contact .line__in', { yPercent: 110 });
-    gsap.to('.contact .line__in', {
-        yPercent: 0, duration: 1, ease: 'power4.out', stagger: 0.12,
-        scrollTrigger: { trigger: '.contact', start: 'top 72%' }
-    });
+    /* ---- Contact headline reveal is handled by CSS + IntersectionObserver (.in) ---- */
 
     /* ---- Loader → hero ---- */
     var lc = document.getElementById('loaderCount'), lb = document.getElementById('loaderBar'), o = { v: 0 };
@@ -151,4 +146,12 @@
         .add(function () { heroTl.play(0); }, 1.5);
 
     addEventListener('load', function () { ScrollTrigger.refresh(); });
+
+    /* ---- Fail-safe: never leave the hero name or contact headline hidden ---- */
+    setTimeout(function () {
+        var c = document.querySelector('.contact__big'); if (c) c.classList.add('in');
+        gsap.set('.hero__name .line__in', { yPercent: 0 });
+        gsap.set(['.hero__lead', '.hero__cta'], { opacity: 1, y: 0 });
+        gsap.set('.hero__photo img', { scale: 1 });
+    }, 3500);
 })();
