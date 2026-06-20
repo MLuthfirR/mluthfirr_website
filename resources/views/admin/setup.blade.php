@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="{{ asset('img/logo-mark-64.png') }}">
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}?v={{ @filemtime(public_path('css/admin.css')) ?: '1' }}">
+    @if (config('services.turnstile.sitekey'))
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    @endif
 </head>
 <body>
 <div class="auth">
@@ -34,6 +37,9 @@
                 <label>Confirm password</label>
                 <input type="password" name="password_confirmation" required>
             </div>
+            @if (config('services.turnstile.sitekey'))
+                <div class="cf-turnstile" data-sitekey="{{ config('services.turnstile.sitekey') }}" data-theme="light" style="margin:0 0 14px"></div>
+            @endif
             <button class="btn btn--primary btn--block" type="submit">Create account</button>
         </form>
     </div>

@@ -35,4 +35,10 @@ return [
         ],
     ],
 
+    // Cloudflare Turnstile (bot protection). Enforced only when both keys are set.
+    'turnstile' => [
+        'sitekey' => env('TURNSTILE_SITEKEY'),
+        'secret'  => env('TURNSTILE_SECRET'),
+    ],
+
 ];

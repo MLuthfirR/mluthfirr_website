@@ -17,9 +17,9 @@ Route::redirect('/mockup', '/', 301);
 /* ---------------- Admin panel ---------------- */
 Route::prefix('admin')->group(function () {
     Route::get('login', [AuthController::class, 'showLogin'])->name('admin.login');
-    Route::post('login', [AuthController::class, 'login']);
+    Route::post('login', [AuthController::class, 'login'])->middleware([\App\Http\Middleware\VerifyTurnstile::class, 'throttle:10,1']);
     Route::get('setup', [AuthController::class, 'showSetup'])->name('admin.setup');
-    Route::post('setup', [AuthController::class, 'setup']);
+    Route::post('setup', [AuthController::class, 'setup'])->middleware([\App\Http\Middleware\VerifyTurnstile::class, 'throttle:10,1']);
     Route::post('logout', [AuthController::class, 'logout'])->name('admin.logout');
 
     Route::middleware(EnsureAdmin::class)->group(function () {
