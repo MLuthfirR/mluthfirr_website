@@ -139,6 +139,21 @@ return [
             'badge'    => 'Live',
             'note'     => 'Staff login required',
         ],
+        [
+            'name'     => 'AI Medical Assistant',
+            'category' => 'Clinical Decision Support',
+            'desc'     => 'An AI tool that supports doctors in diagnosing patients — strictly assistive, never the '
+                .'final decision. Upload a patient-record PDF for an AI-drafted clinical summary and differential '
+                .'diagnosis, or upload a CT scan image to get the scan back with labelled boxes marking regions of '
+                .'interest and their findings. Built on OpenAI, with bilingual (Indonesian/English) output.',
+            'tags'     => ['AI', 'Healthcare', 'OpenAI'],
+            'url'      => 'https://medic.mluthfirr.id',
+            'cta'      => 'Open tool',
+            'accent'   => 'a',
+            'preview'  => 'img/preview-medic.png',
+            'badge'    => 'Live',
+            'note'     => 'Staff login required',
+        ],
     ],
 
     'skills' => [
